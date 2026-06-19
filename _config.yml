@@ -117,8 +117,8 @@ analytics:
 # Site Author
 author:
   name             : "Ricardo Sanchez Perez"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  avatar           : "/assets/images/pfp.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : Certified in Cybersecurity \| DevSecOps & AI Security
   location         : "Tlaxcala, Mexico"
   email            : "ricardo.sanchezperez@outlook.com"
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
@@ -150,11 +150,11 @@ footer:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-square-envelope"
-      url: "ricardo.sanchezperez@outlook.com"
+      #url: "ricardo.sanchezperez@outlook.com"
 
     - label: "Linkedin"
       icon: "fa-brands fa-linkedin"
-      url: "https://www.linkedin.com/in/ricardo-sanchez-perez"
+      #url: "https://www.linkedin.com/in/ricardo-sanchez-perez"
 
     - label: "Twitter"
       icon: "fab fa-fw fa-square-x-twitter"
@@ -165,7 +165,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/RicSanPer"
+      #url: "https://github.com/RicSanPer"
       # url:
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
