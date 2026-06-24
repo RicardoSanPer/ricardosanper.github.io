@@ -28,7 +28,7 @@ A small home server that I use to practice system administration, as well as hos
 Running Ubuntu 24.04.
  
 ## 🧰 Tech
-**Languages:** Python · Java · C# · C++
+**Languages:** Python · C# · C++
 
 **Security:** Network & Systems Security · SOC operations · Software Security
 
