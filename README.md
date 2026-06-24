@@ -20,9 +20,7 @@ A cybersecurity learning platform with hands-on labs. I am about learning tools 
 [My profile](https://tryhackme.com/p/ricsanper99)
 
 ### Write-ups
-Write-ups about things I learn about and stuff I work on that I consider interesting. Currently under construction as part of this website.
-
-However you can check out my [Advent of Code 2025 repository](https://github.com/RicardoSanPer/Advent_Of_Code_2025) where I wrote about the problems I solved.
+Write-ups about things I learn about and stuff I work on that I consider interesting. Available at [My personal website.](https://ricardosanper.github.io)
 
 ### Self-hosted homelab
 A small home server that I use to practice system administration, as well as hosting some services like media streaming, NAS, development tools, etc.
