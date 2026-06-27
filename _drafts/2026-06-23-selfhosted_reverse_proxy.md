@@ -83,14 +83,19 @@ Using ```sudo lsof -i :53``` I can check the services using it, being ```systemd
 
 After finishing the above configuration I accessed the Adguard web interface and finished the setup. To test I set my personal computer to use the homeserver as DNS server, and was pleasantly surprised to see it was generting activity on the admin panel, meaning it was working properly.
 
-Now that nginx and Adguard weree working, it was time to start creating custom URLs. For that I created custom filter in Adguard's admin panel, mapping domains and subdomains in the format ```service.homelab.rsp``` to my server's IP. Then I simply added server blocks in the nginx configuration file to pass the requests to the proper services and configured the services to use the new URL where needed. After testing that the domain resolution worked and that the services continued to work as intended I set to update the Docker containers to only be exposed to localhost (by adding the IP address ```127.0.0.1``` to the ports).
+Now that nginx and Adguard were working, it was time to start creating custom URLs. For that I created custom filter in Adguard's admin panel, mapping domains and subdomains in the format ```service.homelab.rsp``` to my server's IP. Then I simply added server blocks in the nginx configuration file to pass the requests to the proper services and configured the services to use the new URL where needed.
+
+# More Hardening 
+After testing that the domain resolution worked and that the services continued to work as intended I set to update the services to only listen on localhost. For the Docker containers Docker I simply had to add ```127.0.0.1``` to the port mappings. 
+
+
 
 Lastly all that was left was to update the firewall rules with UFW. I started by revoking the previous rules that allowed traffic in all the ports of the previously exposed services, then fine tunning to allow the traffic only between the services that reqired it, like between Shoko server and Jellyfin, or the *arr stack and qbitTorrent.
 
 -- TODO: finish network diagram
 -- Firewall rules
--- Change Gitea to 127.0.0.1
 -- change remote to gitea.homelab.rsp
+-- Mention per tool configs?
 # References
 Docker Networking Overview: [Networking Overview](https://docs.docker.com/engine/network/)
 Nginx Installation Guide (Linux): [nginx: Linux Packages](https://nginx.org/en/linux_packages.html)
