@@ -86,15 +86,14 @@ After finishing the above configuration I accessed the Adguard web interface and
 Now that nginx and Adguard were working, it was time to start creating custom URLs. For that I created custom filter in Adguard's admin panel, mapping domains and subdomains in the format ```service.homelab.rsp``` to my server's IP. Then I simply added server blocks in the nginx configuration file to pass the requests to the proper services and configured the services to use the new URL where needed.
 
 # More Hardening 
-After testing that the domain resolution worked and that the services continued to work as intended I set to update the services to only listen on localhost. For the Docker containers Docker I simply had to add ```127.0.0.1``` to the port mappings. 
+After testing that the domain resolution worked and that the services continued to work as intended I set to update the services to only listen on localhost. For the Docker containers Docker I simply had to add ```127.0.0.1``` to the port mappings. For services on the host I modified the configuration according to their respective documentations, but generally it consisted of swapping some the application IP from ```*``` or ````0.0.0.0``` to the local host.
 
-
+Further application configurations I had to change for some services was adding the new URL so that they could properly load content on the browser, as they were no longer using a raw IP address.
 
 Lastly all that was left was to update the firewall rules with UFW. I started by revoking the previous rules that allowed traffic in all the ports of the previously exposed services, then fine tunning to allow the traffic only between the services that reqired it, like between Shoko server and Jellyfin, or the *arr stack and qbitTorrent.
 
 -- TODO: finish network diagram
 -- Firewall rules
--- change remote to gitea.homelab.rsp
 -- Mention per tool configs?
 # References
 Docker Networking Overview: [Networking Overview](https://docs.docker.com/engine/network/)
